@@ -117,6 +117,25 @@
   :focus-visible { outline:2px solid var(--brass); outline-offset:3px; }
 
   /* ---------- HERO ---------- */
+ #heroVideoBg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: 0; /* 放在底层 */
+    pointer-events: none;
+    opacity: 0.15; /* 重点：控制透明度，让它淡淡地在黑白色调下播放，不抢文字风头 */
+  }
+  
+  /* 确保 Hero 里的其他文字在视频上方显示 */
+  header.hero * {
+    position: relative;
+    z-index: 1;
+  }
+
   header.hero {
     min-height:100vh; min-height:100svh;
     display:flex; flex-direction:column; align-items:center; justify-content:center;
@@ -257,7 +276,10 @@
     </div>
   </nav>
 
-  <header class="hero" id="home">
+      <header class="hero" id="home">
+    <video autoplay loop muted playsinline id="heroVideoBg">
+      <source src="profile-video.mp4" type="video/mp4">
+    </video>
     <div class="eyebrow">上海 SHANGHAI · 31.2304°N 121.4737°E</div>
     <h1 class="reveal visible">Xiang Yiheng</h1>
     <div class="cn-name" lang="zh">项亦恒</div>
@@ -342,7 +364,7 @@
         <p>Deeply rooted in Ningbo, Zhejiang — the anchor that makes chasing an education on the other side of the world feel possible. Three people hear about every result before anyone else does.</p>
       </div>
       <div class="family-photo-wrap reveal">
-        <img src="{{FAMILY}}" alt="The Xiang family together" loading="lazy">
+        <img src="family.JPG" alt="The Xiang family together" loading="lazy">
       </div>
       <div class="family-cap reveal">The whole crew</div>
       <div class="family-grid">
