@@ -178,6 +178,30 @@
   .academic-text h2 { font-size:clamp(2rem,4vw,2.9rem); font-weight:700; letter-spacing:-0.02em; margin:6px 0 22px; }
   .academic-text p { color:var(--graphite); font-size:1.02rem; line-height:1.7; margin-bottom:18px; }
   .stat-row { display:flex; gap:36px; margin-top:34px; flex-wrap:wrap; }
+  /* 苹果风文本链按钮 */
+  .apple-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.95rem;
+    color: var(--brass); /* 使用你网站自带的优雅金色 */
+    font-weight: 500;
+    transition: color 0.2s ease;
+  }
+  /* 鼠标悬停时变成深金色 */
+  .apple-btn:hover {
+    color: var(--brass-dark);
+  }
+  /* 按钮后面的箭头小图标 */
+  .apple-btn svg {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.2s ease;
+  }
+  /* 鼠标悬停时，小箭头轻轻往右指一下（苹果标志性微动效） */
+  .apple-btn:hover svg {
+    transform: translateX(3px);
+  }
   .stat .num { font-size:2rem; font-weight:700; letter-spacing:-0.02em; color:var(--ink); }
   .stat .label { font-family:var(--font-mono); font-size:.68rem; letter-spacing:.05em; text-transform:uppercase; color:var(--graphite); margin-top:4px; max-width:130px; line-height:1.4; }
   @media (max-width:900px){ .academic-grid{ grid-template-columns:1fr; gap:44px; } .academic-text{ order:2; } }
